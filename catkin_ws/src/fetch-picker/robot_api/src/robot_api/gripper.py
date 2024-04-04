@@ -7,6 +7,7 @@ import control_msgs.msg
 import actionlib
 
 # TODO: ACTION_NAME = ???
+ACTION_NAME = control_msgs.msg.GripperCommandAction
 CLOSED_POS = 0.0  # The position for a fully-closed gripper (meters).
 OPENED_POS = 0.10  # The position for a fully-open gripper (meters).
 
@@ -19,16 +20,24 @@ class Gripper(object):
 
     def __init__(self):
         # TODO: Create actionlib client
+        self.client = actionlib.SimpleActionClient('gripper_controller/gripper_action', ACTION_NAME)
         # TODO: Wait for server
-        pass
+        self.client.wait_for_server()
 
     def open(self):
         """Opens the gripper.
         """
         # TODO: Create goal
         # TODO: Send goal
+
+        goal = control_msgs.msg.GripperCommandGoal()
+        goal.command.position = OPENED_POS
+        goal.command.max_effort = self.MAX_EFFORT
+        self.client.send_goal(goal)
+
         # TODO: Wait for result
-        pass
+        self.client.wait_for_result()
+        
 
     def close(self, max_effort=MAX_EFFORT):
         """Closes the gripper.
@@ -39,5 +48,10 @@ class Gripper(object):
         """
         # TODO: Create goal
         # TODO: Send goal
+        goal = control_msgs.msg.GripperCommandGoal()
+        goal.command.position = CLOSED_POS
+        goal.command.max_effort = max_effort
+        self.client.send_goal(goal)
+        
         # TODO: Wait for result
-        pass
+        self.client.wait_for_result()        
