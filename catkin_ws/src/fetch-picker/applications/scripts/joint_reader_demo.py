@@ -26,7 +26,8 @@ def main():
     for k, v in zip(names, arm_vals):
         print('{}\t{}'.format(k, v))
                       
-    print(reader.get_joint('l_gripper_finger_joint'))
+    print('l_gripper_finger_joint: ', reader.get_joint('l_gripper_finger_joint'))
+    print('torso_lift_joint: ', reader.get_joint('torso_lift_joint'))
                       
 if __name__ == '__main__':
     main()

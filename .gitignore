@@ -4,3 +4,4 @@ catkin_ws/logs
 bagfiles
 catkin_ws/.catkin_tools
 .vscode/settings.json
+*.pyc
