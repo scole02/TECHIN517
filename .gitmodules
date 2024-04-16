@@ -1,0 +1,6 @@
+[submodule "catkin_ws/src/realsense-ros"]
+	path = catkin_ws/src/realsense-ros
+	url = https://github.com/scole02/realsense-ros
+[submodule "catkin_ws/src/ros_kortex"]
+	path = catkin_ws/src/ros_kortex
+	url = https://github.com/Kinovarobotics/ros_kortex.git
