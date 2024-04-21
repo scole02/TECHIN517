@@ -175,20 +175,20 @@
         let z_ang = 0;
         switch(evt.target.id) {
           case 'forward':
-            x_lin = 0.1;
+            x_lin = 0.5;
             z_ang = 0;
             break;
           case 'back':
-            x_lin = -0.1;
+            x_lin = -0.5;
             z_ang = 0;
             break;
           case 'left':
             x_lin = 0;
-            z_ang = 0.8;
+            z_ang = 1.8;
             break;            
           case 'right':
             x_lin = 0;
-            z_ang = -0.8;
+            z_ang = -1.8;
             break;
           default:
             console.log("startMove event button id: ${evt.target.id} not recognized");
