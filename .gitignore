@@ -5,3 +5,4 @@ bagfiles
 catkin_ws/.catkin_tools
 .vscode/settings.json
 *.pyc
+catkin_ws/src/joint_state_reader/src/joint_state_reader/__pycache__/
