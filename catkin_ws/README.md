@@ -1,11 +1,16 @@
 ## Gazebo, D435, and OctoMap
-`$ catkin build`  
 
 #### Launch Sim arm and Sim d435
-`$ roslaunch kortex_gazebo spawn_kortex_robot_d435.launch start_rviz:=false arm:=gen3_lite gripper:=gen3_lite_2f sim_d435:=true`
+```bash
+roslaunch kortex_gazebo spawn_kortex_robot_d435.launch start_rviz:=false arm:=gen3_lite gripper:=gen3_lite_2f sim_d435:=true
+```
 
 #### Launch Sim arm and Real d435
-`$ roslaunch kortex_gazebo spawn_kortex_robot_d435.launch start_rviz:=false arm:=gen3_lite gripper:=gen3_lite_2f sim_d435:=false`
+```bash
+roslaunch kortex_gazebo spawn_kortex_robot_d435.launch start_rviz:=false arm:=gen3_lite gripper:=gen3_lite_2f sim_d435:=false
+roslaunch realsense2_camera rs_camera.launch
+```
+
 
 
 ### Gazebo
