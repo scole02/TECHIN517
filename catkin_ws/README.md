@@ -8,6 +8,8 @@ roslaunch kortex_gazebo spawn_kortex_robot_d435.launch start_rviz:=false arm:=ge
 #### Launch Sim arm and Real d435
 ```bash
 roslaunch kortex_gazebo spawn_kortex_robot_d435.launch start_rviz:=false arm:=gen3_lite gripper:=gen3_lite_2f sim_d435:=false
+```
+```bash
 roslaunch realsense2_camera rs_camera.launch
 ```
 
