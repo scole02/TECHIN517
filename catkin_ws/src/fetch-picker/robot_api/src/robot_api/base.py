@@ -102,6 +102,7 @@ class Base(object):
             direction = -1 if distance < 0 else 1
             self.move(direction * speed, 0)
             rate.sleep()
+        self.move(0, 0)
             
     def move(self, linear_speed, angular_speed):
         """Moves the base instantaneously at given linear and angular speeds.
