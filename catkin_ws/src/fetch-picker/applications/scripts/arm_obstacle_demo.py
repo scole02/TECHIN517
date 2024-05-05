@@ -2,6 +2,7 @@
 
 from moveit_python import PlanningSceneInterface
 from geometry_msgs.msg import PoseStamped
+from moveit_msgs.msg import OrientationConstraint
 import rospy
 import robot_api
 import moveit_python
@@ -35,7 +36,7 @@ def main():
     x = table_x - (table_size_x / 2) + (size_x / 2)
     y = 0 
     z = table_z + (table_size_z / 2) + (size_z / 2)
-    planning_scene.addBox('divider', size_x, size_y, size_z, x, y, z)
+    # planning_scene.addBox('divider', size_x, size_y, size_z, x, y, z)
     
     pose1 = PoseStamped()
     pose1.header.frame_id = 'base_link'
@@ -50,6 +51,14 @@ def main():
     pose2.pose.position.y = 0.3
     pose2.pose.position.z = 0.75
     pose2.pose.orientation.w = 1
+    oc = OrientationConstraint()
+    oc.header.frame_id = 'base_link'
+    oc.link_name = 'wrist_roll_link'
+    oc.orientation.w = 1
+    oc.absolute_x_axis_tolerance = 0.1
+    oc.absolute_y_axis_tolerance = 0.1
+    oc.absolute_z_axis_tolerance = 3.14
+    oc.weight = 1.0
     
     arm = robot_api.Arm()
     def shutdown():
@@ -78,7 +87,7 @@ def main():
         planning_scene.setColor('tray', 1, 0, 1)
         planning_scene.sendColors()    
     rospy.sleep(1)
-    error = arm.move_to_pose(pose2, **kwargs)
+    error = arm.move_to_pose(pose2, orientation_constraint=oc, **kwargs)
     if error is not None:
         rospy.logerr('Pose 2 failed: {}'.format(error))
     else:
