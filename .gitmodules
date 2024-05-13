@@ -7,3 +7,6 @@
 [submodule "catkin_ws/src/realsense_gazebo_plugin"]
 	path = catkin_ws/src/realsense_gazebo_plugin
 	url = https://github.com/pal-robotics/realsense_gazebo_plugin.git
+[submodule "catkin_ws/src/aruco_ros"]
+	path = catkin_ws/src/aruco_ros
+	url = https://github.com/scole02/aruco_ros.git
