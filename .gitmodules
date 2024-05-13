@@ -3,7 +3,7 @@
 	url = https://github.com/scole02/realsense-ros
 [submodule "catkin_ws/src/ros_kortex"]
 	path = catkin_ws/src/ros_kortex
-	url = https://github.com/Kinovarobotics/ros_kortex.git
+	url = https://github.com/scole02/ros_kortex.git
 [submodule "catkin_ws/src/realsense_gazebo_plugin"]
 	path = catkin_ws/src/realsense_gazebo_plugin
 	url = https://github.com/pal-robotics/realsense_gazebo_plugin.git
